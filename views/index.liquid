@@ -1,25 +1,33 @@
 {% render 'partials/head.liquid' %}
 
 <article>
-  <p>{{ person.name }}</p> 
-  <img src="assets/578E78DC-FB82-4463-8429-EE3034163F36_1_105_c.jpeg" width="100" height="100">
 
+  <section class="voor-hover">
+    <section class="kaart">
+      <section class="kaart-voorkant"></section>
+      <section class="kaart-achterkant">
+        <h2 class="over-mij">Over mij</h2>
+        <p class="bio">{{ person.bio }}</p>
+      </section>
+    </section>
+  </section>
+
+
+  <h1>Anouar Aït Brahim</h1>
+  <p class="mijn-info">Student Frontend Design & Development</p>
+
+  <section class="links">
+    <a href="https://github.com/Anouarab2"><img src="assets/logo.webp" alt="">Github</a>
+    <a href="https://anouarab2.github.io/i-love-web/"><img src="assets/web.png" alt="">I Love Web</a>
+  </section>
+
+  <h2>Talen</h2>
   <ul>
-    <li> Jaar 1 FDND</li>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
+    <li>{{ person.custom.taal1 }}</li>
+    <li>{{ person.custom.taal2 }}</li>
+    <li>{{ person.custom.taal3 }}</li>
   </ul>
-  
-  <dl class="hokjes">
-    <div class="hok1">Haar knippen</div>
-    <div class="hok2">Tekenen</div>
-    <div class="hok3">Gymen</div>
-  </dl>
-  
-  <a href="https://anouarab2.github.io/i-love-web/"> 
-    <button>I Love Web</button> 
-  </a>
+
 </article>
 
 {% render 'partials/foot.liquid' %}

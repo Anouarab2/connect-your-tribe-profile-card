@@ -1,147 +1,105 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  background: silver;
-  color: #050542;
-}
-
-header {
-  padding: 0.5rem;
-  background: #A675F5;
-  color: white;
-
-  h1 {
-    text-transform: uppercase;
-  }
-}
-
-article {
+body{
+  background-color: palevioletred;
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  width: 20rem;
-  aspect-ratio: 1/1;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: white;
-  text-align: center;
-  transform-origin: center;
-  transform: rotate(2deg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  > p {
-    font-size: 2rem;
-    font-family: 'Permanent Marker', cursive;
-    transform-origin: center;
-    transform: rotate(-6deg);
-    word-break: break-all;
-  }
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
 }
-
-footer {
-  height: 1rem;
-  background: #A675F5;
-} */
 
 article{
-  background: linear-gradient(0deg, rgb(116, 116, 116) 30%, rgb(36, 185, 138) 100%) ;
-  height: 600px;
-  width: 400px;
-  border: 10px solid black;
+  background-color: black;
+  color: white;
+  aspect-ratio: 3/5;
   border-radius: 2em;
-  height: 80vh;
 }
 
-p{
-  font-size: 1.8em;
-  justify-self: center;
+.voor-hover{
+  width: 100%;
+  height: 50%;
+}
+
+.voor-hover:hover > .kaart{
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.kaart{
+  transition: transform .5s;
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  transform-style: preserve-3d;
+}
+
+.kaart-voorkant, .kaart-achterkant{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 2em 2em 0 0 ;
+}
+
+.kaart-voorkant{
+  background-image: url(assets/IMG_9078.JPG);
+  background-size: 100%;
+}
+
+.kaart-achterkant{
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.links{
+  display: flex;
+  gap: .5em;
+  margin-left: .5em;
+  margin-bottom: 2em;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 6em;
+  font-size: .8em;
+  gap: .5em;
+  align-items: center;
 }
 
 img{
-border: 10px solid rgb(0,0,0);
-float: left;
-border-radius: 2em;
-width: 150px;
-height: 150px;
-margin-top: 30px;
+  width: 2em;
+  height: 2em;
 }
 
-.container{
-display: flex; 
-flex-direction: column;
-height: 80vh;
+h1{
+  justify-self: center;
+  font-size: 1.7em;
 }
 
-.box{
-text-align: center;
+h2{
+  margin-left: 1rem;
+  font-size: 1.2em;
 }
 
-ul{
-  margin-top: 65px;
-  font-size: 1.3em;
+.over-mij{
+  margin-left: 3rem;
+  margin-top: 3rem;
 }
 
-#naam {
-font-weight: bold;
-font-size: 2em;
-margin-top: 20px;
+.bio{
+  margin-left: 3rem;
+  max-width: 14.3em;
 }
 
-#achternaam{
-font-size: 2em;
-}
-
-body {
-  display: flex;
-  justify-content: center;
+.mijn-info{
+  margin-top: -1em;
+  padding-inline: 1.5em;
+  margin-bottom: 2em;
 }
 
 ul{
-  margin-left: 200px;
-}
-
-.hokjes{
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5em;
-  margin-top: 70px;
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-.hok1{
- background-color: rgb(0, 0, 0);
-}
-
-.hok2{
-  background-color: rgb(0, 0, 0);
-  margin-top: 20px;
-}
-
-.hok3{ 
-  background-color: rgb(0, 0, 0);
-  margin-top: 20px;
-}
-
-button{
-  margin-left: 110px;
-  margin-top: 30px;
-  background-color: black;
-  color: rgb(255, 255, 255);
-  font-size: 2em;
-  border-radius: 10px;
-}
-
-.responsive{
-  display: flex;
-  margin-left: 30px;
+  margin-bottom: 3em;
 }
