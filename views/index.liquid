@@ -1,14 +1,25 @@
 {% render 'partials/head.liquid' %}
 
 <article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+  <p>{{ person.name }}</p> 
+  <img src="assets/578E78DC-FB82-4463-8429-EE3034163F36_1_105_c.jpeg" width="100" height="100">
 
-  <p>{{ person.name }}</p>
-
-  <footer></footer>
+  <ul>
+    <li> Jaar 1 FDND</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  
+  <dl class="hokjes">
+    <div class="hok1">Haar knippen</div>
+    <div class="hok2">Tekenen</div>
+    <div class="hok3">Gymen</div>
+  </dl>
+  
+  <a href="https://anouarab2.github.io/i-love-web/"> 
+    <button>I Love Web</button> 
+  </a>
 </article>
 
 {% render 'partials/foot.liquid' %}

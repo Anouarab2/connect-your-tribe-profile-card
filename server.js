@@ -7,7 +7,7 @@ import { Liquid } from 'liquidjs';
 
 
 // Vul hier jouw eigen ID in (zie de instructies in de leertaak)
-const personID = 234
+const personID = 168
 
 // Doe een fetch naar een URL op de WHOIS API, ga pas verder als de fetch gelukt is
 const personResponse = await fetch('https://fdnd.directus.app/items/person/' + personID)
@@ -18,6 +18,9 @@ const personResponseJSON = await personResponse.json()
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(personResponseJSON)
+
+personResponseJSON.data.custom = JSON.parse(personResponseJSON.data.custom)
+
 
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
@@ -35,12 +38,21 @@ app.engine('liquid', engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')
 
+
+
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
    response.render('index.liquid', {person: personResponseJSON.data})
+})
+
+
+
+app.get('/oefenen', async function (request, response) {
+  // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+  response.render('oefenen.liquid', {person: personResponseJSON.data})
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
@@ -67,3 +79,4 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
